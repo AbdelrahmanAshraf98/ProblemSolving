@@ -1,31 +1,21 @@
 #include <iostream>
+
 using namespace std;
 
 int main()
 {
-    int n ,cond = 5;
+    int n;
+    int luckyset[]={777,774,747,744,477,474,447,444,77,74,47,44,7,4};
+    int  lucky = 0;
     cin>>n;
-    int num = n;
-    while (n != 0){
-        if(n % 10 != 7 && n % 10 != 4)
-         {
-            cond = 0;
+    for(int i = 0 ;i < 14 ;i ++)
+        if(n % luckyset[i]==0)
+        {
+            lucky = 1;
             break;
         }
-            cond = 1;
-            n /= 10;
-    }
-    if(cond == 0)
-    {
-        if(num%7 == 0 || num%4 ==0|| num%44 ==0|| num%47 ==0
-           || num%74 ==0|| num%77 ==0|| num%444 ==0|| num%447 ==0
-           || num%474 ==0|| num%744 ==0|| num%747 ==0|| num%777 ==0
-           || num%477 ==0|| num%774 ==0)
+        if(lucky == 1)
             cout<<"YES"<<endl;
         else
             cout<<"NO"<<endl;
-    }
-    else
-        cout<<"YES"<<endl;
-
 }
